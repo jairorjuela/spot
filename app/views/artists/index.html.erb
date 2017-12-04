@@ -1,0 +1,14 @@
+<h1>Artist</h1>
+<div class="container">
+  <div class="row">
+      <% @artists.each do |artist| %>
+      <div class="col-xs-6 col-md-4" id="preview">
+        <div class="text-center"><h2><%= artist.name %></h2></div>
+        <div class="text-center"><img src="<%= artist.image_url %>" alt="<%= artist.name %>" class="rounded-circle"></div>
+        <div class="text-center">
+          <%= link_to "Ver Detalles", artist_path(artist), class: "btn btn-primary btn-lg active", role: "button", id: "buttom_details"%>
+        </div>
+      </div>
+      <%end %>
+  </div>
+</div>

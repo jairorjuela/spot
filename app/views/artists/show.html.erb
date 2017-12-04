@@ -1,0 +1,16 @@
+<h1><%= @artist.name %></h1>
+
+  <div class="container">
+    <div class="row">
+      <% @albums.each do |id| %>
+      <% albums = Album.find_by(id:[id]) %>
+        <div class="col-xs-6 col-md-4" id="preview">
+          <div class="text-center"><h2><%= albums.name %></h2></div>
+          <div class="text-center"><img src="<%= albums.image_url %>" alt="<%= albums.name %>" class="rounded-circle"></div>
+          <div class="text-center">
+            <%= link_to "Volver a los Aritstas", artists_path, class: "btn btn-primary btn-lg active", role: "button", id: "buttom_details"%>
+          </div>
+        </div>
+        <%end %>
+    </div>
+  </div>
